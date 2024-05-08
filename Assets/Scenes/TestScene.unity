@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joyStick: {fileID: 1086780544}
   _rotationSpeed: 100
-  _speed: 4
+  _speed: 5
 --- !u!1 &1783503257
 GameObject:
   m_ObjectHideFlags: 0
