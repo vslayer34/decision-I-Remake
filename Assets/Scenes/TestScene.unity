@@ -1030,7 +1030,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!114 &1562982196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,6 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joyStick: {fileID: 1086780544}
   _rotationSpeed: 100
+  _speed: 20
 --- !u!1 &1783503257
 GameObject:
   m_ObjectHideFlags: 0
