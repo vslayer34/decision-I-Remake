@@ -38,8 +38,6 @@ public class JoyStickPlayerController : MonoBehaviour
             GetCharacterDirection();
             MoveCharacter();
         }
-
-        // transform.Translate(_movementVector * Time.deltaTime * 2);
     }
 
     // Member Methods------------------------------------------------------------------------------
