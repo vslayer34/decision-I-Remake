@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class RotateRangeCircle : MonoBehaviour
 {
-    private void Update()
+    [SerializeField, Tooltip("rotation range of the aim range")]
+    private float _rotationRange;
+
+    [SerializeField, Tooltip("time for rotation")]
+    private float _rotationTime;
+
+    [SerializeField, Tooltip("The twean type")]
+    private LeanTweenType _tweenType;
+
+    private void Start()
     {
-        
+        LeanTween.rotateY(gameObject, _rotationRange, _rotationTime).setLoopPingPong();
     }
 }
