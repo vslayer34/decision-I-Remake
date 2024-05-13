@@ -39,10 +39,4 @@ public class HandleWeapons : MonoBehaviour
         Physics.SphereCastNonAlloc(transform.position, _testRadius, Vector3.zero, _hits);
         _spriteRenderer.transform.localScale = Vector3.one * (_testRadius / _oneScaleRadiusCoverage); 
     }
-
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(transform.position, _testRadius);
-    }
 }

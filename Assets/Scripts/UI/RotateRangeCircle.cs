@@ -13,8 +13,13 @@ public class RotateRangeCircle : MonoBehaviour
     [SerializeField, Tooltip("The twean type")]
     private LeanTweenType _tweenType;
 
-    private void Start()
+    // private void Start()
+    // {
+    //     LeanTween.rotateY(gameObject, _rotationRange, _rotationTime).setLoopPingPong().setEase(_tweenType);
+    // }
+
+    private void Update()
     {
-        LeanTween.rotateY(gameObject, _rotationRange, _rotationTime).setLoopPingPong();
+        transform.Rotate(Vector3.forward, _rotationRange * Time.deltaTime);
     }
 }
