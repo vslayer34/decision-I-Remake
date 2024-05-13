@@ -30,8 +30,6 @@ public class JoyStickPlayerController : MonoBehaviour
     private void Update()
     {
         _movementVector = new Vector3(_joyStick.Direction.x, 0.0f, _joyStick.Direction.y);
-        Debug.Log(_movementVector.sqrMagnitude);
-        // Debug.Log(_orientationVector);
         
         if (_movementVector != Vector3.zero)
         {
