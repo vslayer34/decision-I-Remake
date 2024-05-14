@@ -2,8 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField, Tooltip("Range of the weapon")]
-    private SO_WeaponStats _stats;
+    [SerializeField, Tooltip("This particler weapon state")]
+    protected SO_WeaponStats _stats;
+
+    protected int _currentMagazineSize;
+
+
+    protected virtual void Start()
+    {
+        
+    }
+
+
+
+    /// <summary>
+    /// Shoot the weapon and play its sound
+    /// </summary>
+    public virtual void ShootWeapon()
+    {
+        if (_currentMagazineSize <= 0)
+        {
+            ReloadWeapon();    
+        }
+
+        _currentMagazineSize--;
+    }
+
+    /// <summary>
+    /// Reload said weapon
+    /// </summary>
+    public void ReloadWeapon()
+    {
+        _currentMagazineSize = _stats.MagazineSize;
+    }
+
+    public void ActivateWeapon()
+    {
+
+    }
 }
