@@ -71,7 +71,8 @@ public class HandleWeapons : MonoBehaviour
             
             _followTarget = null;
             Debug.Log("Reset target");
-            ResetCharacterPivot();
+            // ResetCharacterPivot();
+            StartCoroutine(ResetCharacterPivot(transform.rotation));
             return;
         }
 
@@ -84,6 +85,8 @@ public class HandleWeapons : MonoBehaviour
             }
             
             _characterPivot.LookAt(_followTarget.transform, Vector3.up);
+            // Quaternion.LookRotation
+            // StartCoroutine(ResetCharacterPivot(Quaternion.LookRotation(_followTarget.transform.position, Vector3.up)));
             _heldWeapon.PullTrigger();
         }
     }
@@ -94,7 +97,20 @@ public class HandleWeapons : MonoBehaviour
     /// <summary>
     /// Reset the pivott rotation with the players when their is no enemy on sight
     /// </summary>
-    private void ResetCharacterPivot() => _characterPivot.rotation = /*Quaternion.Euler(0, 0, 0)*/transform.rotation;
+    private IEnumerator ResetCharacterPivot(Quaternion targetRotation)
+    {
+        // _characterPivot.rotation = transform.rotation;
+        float rotationTime = 0.5f;
+        float currentTime = 0.0f;
+        Quaternion currentRotation = _characterPivot.rotation;
+
+        while (currentTime <= rotationTime)
+        {
+            currentTime += Time.deltaTime;
+            _characterPivot.rotation = Quaternion.Lerp(currentRotation, targetRotation, currentTime / rotationTime);
+            yield return null;
+        }
+    }
 
     /// <summary>
     /// Get the current held weapon and set it as active
