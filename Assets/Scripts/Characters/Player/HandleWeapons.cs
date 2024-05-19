@@ -8,6 +8,8 @@ public class HandleWeapons : MonoBehaviour
     [field: SerializeField, Tooltip("Weapon holding area")]
     public Transform WeaponHoldPoint { get; private set; }
 
+    private Weapon _heldWeapon;
+
     [SerializeField, Tooltip("Reference to the range sprite")]
     private SpriteRenderer _spriteRenderer;
 
@@ -36,6 +38,11 @@ public class HandleWeapons : MonoBehaviour
 
     // Game Loop Methods---------------------------------------------------------------------------
 
+    private void Start()
+    {
+        GetActiveWeapon();
+    }
+    
     private void Update()
     {
         DisplayRange();
@@ -70,17 +77,6 @@ public class HandleWeapons : MonoBehaviour
 
         for (int i = 0; i < collisionCount; i++)
         {
-            // if (_hits[i].TryGetComponent(out ITakeDamage damageable))
-            // {
-            //     if ((_hits[i].transform.position - transform.position).sqrMagnitude < nearestEnemy)
-            //     {
-            //         // _followTarget = _hits[i].;
-            //     }
-
-            //     _characterPivot.LookAt(_hits[i].transform, Vector3.up);
-            //     break;
-            // }
-
             if ((_hits[i].transform.position - transform.position).sqrMagnitude < nearestEnemy)
             {
                 _followTarget = _hits[i];
@@ -88,11 +84,25 @@ public class HandleWeapons : MonoBehaviour
             }
             
             _characterPivot.LookAt(_followTarget.transform, Vector3.up);
+            _heldWeapon.PullTrigger();
         }
     }
 
 
     // Signal Methods------------------------------------------------------------------------------
 
+    /// <summary>
+    /// Reset the pivott rotation with the players when their is no enemy on sight
+    /// </summary>
     private void ResetCharacterPivot() => _characterPivot.rotation = /*Quaternion.Euler(0, 0, 0)*/transform.rotation;
+
+    /// <summary>
+    /// Get the current held weapon and set it as active
+    /// </summary>
+    /// <typeparam name="Weapon"></typeparam>
+    private void GetActiveWeapon()
+    {
+        _heldWeapon = WeaponHoldPoint.GetComponentInChildren<Weapon>();
+        _heldWeapon.ActivateWeapon();
+    }
 }

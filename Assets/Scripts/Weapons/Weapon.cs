@@ -12,7 +12,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual void Start()
     {
-        _currentMagazineSize = _stats.MagazineSize;
+        
     }
 
 
@@ -20,26 +20,35 @@ public abstract class Weapon : MonoBehaviour
     /// <summary>
     /// Shoot the weapon and play its sound
     /// </summary>
-    public virtual void ShootWeapon()
+    public virtual void PullTrigger()
     {
         if (_currentMagazineSize <= 0)
         {
             ReloadWeapon();    
         }
-        
+
+        StartCoroutine(Shoot());
+    }
+
+    protected virtual IEnumerator Shoot()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Debug.Log("Pew Pew");
         _currentMagazineSize--;
     }
 
     /// <summary>
     /// Reload said weapon
     /// </summary>
-    public void ReloadWeapon()
+    public IEnumerator ReloadWeapon()
     {
+        yield return new WaitForSeconds(_stats.ReloadTime);
         _currentMagazineSize = _stats.MagazineSize;
+        Debug.Log("Reloaded");
     }
 
     public void ActivateWeapon()
     {
-
+        _currentMagazineSize = _stats.MagazineSize;
     }
 }

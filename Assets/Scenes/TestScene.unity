@@ -558,6 +558,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5747545496129872167}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1411609726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2648930820079255932, guid: 2f18a79b4ee9db6689de7b648c071e70,
+    type: 3}
+  m_PrefabInstance: {fileID: 6748767200301908677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1487416581 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3354264221569549908, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 5747545496129872167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1545139702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1412,7 +1424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3354264221569549908, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1411609726}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7fdb31b628aa18d4971e74bbfcc89ea, type: 3}
 --- !u!1001 &6748767200301908677
@@ -1421,7 +1437,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1487416581}
     m_Modifications:
     - target: {fileID: 2648930820079255932, guid: 2f18a79b4ee9db6689de7b648c071e70,
         type: 3}
@@ -1481,8 +1497,14 @@ PrefabInstance:
     - target: {fileID: 2764483053558739902, guid: 2f18a79b4ee9db6689de7b648c071e70,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3791600457952528616, guid: 2f18a79b4ee9db6689de7b648c071e70,
+        type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d4cf6faddcb610ca9eace6e4c39e0df,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1505,4 +1527,3 @@ SceneRoots:
   - {fileID: 1736710421}
   - {fileID: 2104987715}
   - {fileID: 2033305967}
-  - {fileID: 6748767200301908677}
