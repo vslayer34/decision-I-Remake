@@ -12,7 +12,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+        _currentMagazineSize = _stats.MagazineSize;
     }
 
 
@@ -26,7 +26,7 @@ public abstract class Weapon : MonoBehaviour
         {
             ReloadWeapon();    
         }
-
+        
         _currentMagazineSize--;
     }
 
