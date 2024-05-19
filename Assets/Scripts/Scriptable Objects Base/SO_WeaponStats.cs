@@ -18,18 +18,22 @@ public class SO_WeaponStats : ScriptableObject
     /// </summary>
     public Type WeaponClass { get; protected set; }
 
-    [field: SerializeField, Tooltip("The range of said weapon")]
     
+    [field: SerializeField, Tooltip("The range of said weapon")]
     /// <summary>
     /// The range of the weapon
     /// </summary>
     public float Range { get; protected set; }
 
+    
+    [field: SerializeField, Tooltip("The reload time of said weapon")]
     /// <summary>
     /// The reload time of the gun
     /// </summary>
     public float ReloadTime { get; protected set; }
 
+    
+    [field: SerializeField, Tooltip("Magazine size")]
     /// <summary>
     /// Number of rounds before reloading is required
     /// </summary>
