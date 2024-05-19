@@ -12,10 +12,13 @@ public class HandleWeapons : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
 
 
-    private RaycastHit[] _hits = new RaycastHit[20];
+    private Collider[] _hits = new Collider[20];
 
     [SerializeField, Tooltip("test radius")]
     private float _testRadius = 5.0f;
+
+    [SerializeField, Tooltip("the layer mask for the zombies")]
+    private LayerMask _zombieLayerMask;
 
 
     /// <summary>
@@ -31,13 +34,37 @@ public class HandleWeapons : MonoBehaviour
     private void Update()
     {
         DisplayRange();
+        DetectEnemies();
     }
     
     // Member Methods------------------------------------------------------------------------------
 
     private void DisplayRange()
     {
-        Physics.SphereCastNonAlloc(transform.position, _testRadius, Vector3.zero, _hits);
         _spriteRenderer.transform.localScale = Vector3.one * (_testRadius / _oneScaleRadiusCoverage); 
+    }
+
+    private void DetectEnemies()
+    {
+        // Physics.SphereCastNonAlloc(transform.position, _testRadius, transform.forward, _hits, 0.0f, (int)_zombieLayerMask);
+
+        // for (int i = 0; i < _hits.Length; i++)
+        // {
+        //     if (_hits[i].collider != null && _hits[i].collider.TryGetComponent(out ITakeDamage damageable))
+        //     {
+        //         damageable?.TakeDamage();
+        //         Debug.Log(_hits[i], this);
+        //     }
+        // }
+
+        int collisionCount = Physics.OverlapSphereNonAlloc(transform.position, _testRadius, _hits, (int)_zombieLayerMask);
+
+        for (int i = 0; i < collisionCount; i++)
+        {
+            if (_hits[i].TryGetComponent(out ITakeDamage damageable))
+            {
+                damageable?.TakeDamage();
+            }
+        }
     }
 }

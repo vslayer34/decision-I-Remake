@@ -402,6 +402,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &619886117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619886113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b0eb954969cd75b9b2cb5df1f59d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &728123795
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +735,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 2988338915834780422, guid: 10bf8cdd0c2da20af8aa23f0cd5dfc8e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4517563720121306141, guid: 10bf8cdd0c2da20af8aa23f0cd5dfc8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -787,6 +804,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 619886115}
+    - targetCorrespondingSourceObject: {fileID: 2988338915834780422, guid: 10bf8cdd0c2da20af8aa23f0cd5dfc8e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 619886117}
   m_SourcePrefab: {fileID: 100100000, guid: 10bf8cdd0c2da20af8aa23f0cd5dfc8e, type: 3}
 --- !u!1001 &5747545496129872167
 PrefabInstance:
@@ -799,7 +820,7 @@ PrefabInstance:
     - target: {fileID: 1633632748711403839, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.76
       objectReference: {fileID: 0}
     - target: {fileID: 1633632748711403839, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
         type: 3}
@@ -809,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 1633632748711403839, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -11.44
       objectReference: {fileID: 0}
     - target: {fileID: 1633632748711403839, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
         type: 3}
@@ -850,6 +871,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173833892250850635, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
+        type: 3}
+      propertyPath: _zombieLayerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8110116772548248614, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
         type: 3}
@@ -897,7 +923,7 @@ PrefabInstance:
     - target: {fileID: 2648930820079255932, guid: 2f18a79b4ee9db6689de7b648c071e70,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.000000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 2648930820079255932, guid: 2f18a79b4ee9db6689de7b648c071e70,
         type: 3}
