@@ -11,6 +11,11 @@ public class HandleWeapons : MonoBehaviour
     [SerializeField, Tooltip("Reference to the range sprite")]
     private SpriteRenderer _spriteRenderer;
 
+    [SerializeField, Tooltip("Reference to the character")]
+    private Transform _characterPivot;
+
+    private Collider _followTarget;
+
 
     private Collider[] _hits = new Collider[20];
 
@@ -46,25 +51,48 @@ public class HandleWeapons : MonoBehaviour
 
     private void DetectEnemies()
     {
-        // Physics.SphereCastNonAlloc(transform.position, _testRadius, transform.forward, _hits, 0.0f, (int)_zombieLayerMask);
-
-        // for (int i = 0; i < _hits.Length; i++)
-        // {
-        //     if (_hits[i].collider != null && _hits[i].collider.TryGetComponent(out ITakeDamage damageable))
-        //     {
-        //         damageable?.TakeDamage();
-        //         Debug.Log(_hits[i], this);
-        //     }
-        // }
+        float nearestEnemy = float.MaxValue;
 
         int collisionCount = Physics.OverlapSphereNonAlloc(transform.position, _testRadius, _hits, (int)_zombieLayerMask);
 
+        if (collisionCount == 0)
+        {
+            if (_followTarget == null)
+            {
+                return;
+            }
+            
+            _followTarget = null;
+            Debug.Log("Reset target");
+            ResetCharacterPivot();
+            return;
+        }
+
         for (int i = 0; i < collisionCount; i++)
         {
-            if (_hits[i].TryGetComponent(out ITakeDamage damageable))
+            // if (_hits[i].TryGetComponent(out ITakeDamage damageable))
+            // {
+            //     if ((_hits[i].transform.position - transform.position).sqrMagnitude < nearestEnemy)
+            //     {
+            //         // _followTarget = _hits[i].;
+            //     }
+
+            //     _characterPivot.LookAt(_hits[i].transform, Vector3.up);
+            //     break;
+            // }
+
+            if ((_hits[i].transform.position - transform.position).sqrMagnitude < nearestEnemy)
             {
-                damageable?.TakeDamage();
+                _followTarget = _hits[i];
+                nearestEnemy = (_hits[i].transform.position - transform.position).sqrMagnitude;
             }
+            
+            _characterPivot.LookAt(_followTarget.transform, Vector3.up);
         }
     }
+
+
+    // Signal Methods------------------------------------------------------------------------------
+
+    private void ResetCharacterPivot() => _characterPivot.rotation = /*Quaternion.Euler(0, 0, 0)*/transform.rotation;
 }
