@@ -17,3 +17,5 @@ MonoBehaviour:
   <ReloadTime>k__BackingField: 2
   <MagazineSize>k__BackingField: 10
   <FireRate>k__BackingField: 30
+  <BulletPrefab>k__BackingField: {fileID: 3450972272745634943, guid: 13251e3152da0f375906da0deb528dd4,
+    type: 3}

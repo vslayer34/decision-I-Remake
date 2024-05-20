@@ -7,6 +7,10 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField, Tooltip("This particler weapon state")]
     protected SO_WeaponStats _stats;
 
+
+    [field: SerializeField, Tooltip("Bullet spawn point")]
+    public Transform BulletSpawnPosition { get; protected set; }
+
     protected int _currentMagazineSize;
 
     private const float SECONDS_PER_MINUTE = 60.0f;
