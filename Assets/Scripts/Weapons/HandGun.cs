@@ -8,4 +8,11 @@ public class HandGun : Weapon
     {
         base.Start();
     }
+
+
+    protected override IEnumerator Shoot()
+    {
+        return base.Shoot();
+        
+    }
 }

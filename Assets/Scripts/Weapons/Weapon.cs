@@ -9,6 +9,8 @@ public abstract class Weapon : MonoBehaviour
 
     protected int _currentMagazineSize;
 
+    private const float SECONDS_PER_MINUTE = 60.0f;
+
 
     protected virtual void Start()
     {
@@ -32,7 +34,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(_stats.FireRate / SECONDS_PER_MINUTE);
         Debug.Log("Pew Pew");
         _currentMagazineSize--;
     }

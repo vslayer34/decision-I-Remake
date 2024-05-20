@@ -16,3 +16,4 @@ MonoBehaviour:
   <Range>k__BackingField: 6.5
   <ReloadTime>k__BackingField: 2
   <MagazineSize>k__BackingField: 10
+  <FireRate>k__BackingField: 30

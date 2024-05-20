@@ -38,4 +38,8 @@ public class SO_WeaponStats : ScriptableObject
     /// Number of rounds before reloading is required
     /// </summary>
     public int MagazineSize { get; protected set; }
+
+
+    [field: SerializeField, Tooltip("The fire rate of the weapon")]
+    public float FireRate { get; protected set; }
 }
