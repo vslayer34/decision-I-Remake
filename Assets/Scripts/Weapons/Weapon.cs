@@ -15,6 +15,8 @@ public abstract class Weapon : MonoBehaviour
 
     protected bool _isShooting;
 
+    protected bool _isReloading;
+
     private const float SECONDS_PER_MINUTE = 60.0f;
 
 
@@ -30,14 +32,16 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
     public virtual void PullTrigger()
     {
-        if (!_isShooting)
+        if (!_isShooting && !_isReloading)
         {
-            _isShooting = true;
-            if (_currentMagazineSize <= 0)
+            if (_currentMagazineSize <= 0 && !_isReloading)
             {
-                ReloadWeapon();    
+                _isReloading = true;
+                StartCoroutine(ReloadWeapon());
+                return;
             }
 
+            _isShooting = true;
             StartCoroutine(Shoot());
         }
     }
@@ -49,6 +53,7 @@ public abstract class Weapon : MonoBehaviour
     protected virtual IEnumerator Shoot()
     {
         _currentMagazineSize--;
+        Debug.Log($"Current magazine size: {_currentMagazineSize}");
         yield return new WaitForSeconds(SECONDS_PER_MINUTE / _stats.FireRate);
         _isShooting = false;
     }
@@ -58,9 +63,11 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
     public IEnumerator ReloadWeapon()
     {
+        Debug.Log("Reloading");
         yield return new WaitForSeconds(_stats.ReloadTime);
         _currentMagazineSize = _stats.MagazineSize;
         Debug.Log("Reloaded");
+        _isReloading = false;
     }
 
 
@@ -79,7 +86,6 @@ public abstract class Weapon : MonoBehaviour
     /// <param name="accuracy">The accuracy of the gun in the stats</param>
     protected void ApplyAccuracyValues(float accuracy)
     {
-        Debug.Log("Applu accuracy");
         BulletSpawnPosition.localRotation = Quaternion.Euler(
             Random.Range(-GetAxisAccuracy(accuracy), GetAxisAccuracy(accuracy)), 
             Random.Range(-GetAxisAccuracy(accuracy), GetAxisAccuracy(accuracy)), 
