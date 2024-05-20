@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
 
     // Member Methods------------------------------------------------------------------------------
 
-    private void ShootBullet()
+    private void ShootBullet(float accuracy = 100.0f)
     {
         _rigidBody.AddForce(transform.forward * 10.0f, ForceMode.Impulse);
     }

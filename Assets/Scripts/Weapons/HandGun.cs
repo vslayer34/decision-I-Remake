@@ -21,6 +21,7 @@ public class HandGun : Weapon
 
     protected override IEnumerator Shoot()
     {
+        ApplyAccuracyValues(_stats.Accuracy);
         _bullet = Instantiate(_stats.BulletPrefab, BulletSpawnPosition.position, BulletSpawnPosition.rotation);
         yield return base.Shoot();
     }

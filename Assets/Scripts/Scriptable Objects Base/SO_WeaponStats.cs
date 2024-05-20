@@ -44,6 +44,10 @@ public class SO_WeaponStats : ScriptableObject
     public float FireRate { get; protected set; }
 
 
+    [field: SerializeField, Tooltip("Weapon Accuracy")]
+    public float Accuracy { get; protected set; }
+
+
     [field: SerializeField, Tooltip("Bullet prefab")]
     public Transform BulletPrefab { get; protected set; }
 }

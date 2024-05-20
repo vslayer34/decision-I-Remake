@@ -44,7 +44,6 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual IEnumerator Shoot()
     {
-        Debug.Log("Pew Pew");
         _currentMagazineSize--;
         yield return new WaitForSeconds(SECONDS_PER_MINUTE / _stats.FireRate);
         _isShooting = false;
@@ -63,5 +62,25 @@ public abstract class Weapon : MonoBehaviour
     public void ActivateWeapon()
     {
         _currentMagazineSize = _stats.MagazineSize;
+    }
+
+
+    protected void ApplyAccuracyValues(float accuracy)
+    {
+        Debug.Log("Applu accuracy");
+        BulletSpawnPosition.localRotation = Quaternion.Euler(
+            Random.Range(-GetAxisAccuracy(accuracy), GetAxisAccuracy(accuracy)), 
+            Random.Range(-GetAxisAccuracy(accuracy), GetAxisAccuracy(accuracy)), 
+            0.0f
+        );
+    }
+
+
+    private float GetAxisAccuracy(float accuracy)
+    {
+        const float DEVIATION = 10.0f;
+        const float MAX_ACCURACY = 10.0f;
+
+        return DEVIATION - Random.Range(accuracy, MAX_ACCURACY);
     }
 }
