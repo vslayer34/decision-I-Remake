@@ -88,6 +88,7 @@ public class HandleWeapons : MonoBehaviour
             // Quaternion.LookRotation
             // StartCoroutine(ResetCharacterPivot(Quaternion.LookRotation(_followTarget.transform.position, Vector3.up)));
             _heldWeapon.PullTrigger();
+            break;
         }
     }
 

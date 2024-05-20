@@ -13,6 +13,8 @@ public abstract class Weapon : MonoBehaviour
 
     protected int _currentMagazineSize;
 
+    protected bool _isShooting;
+
     private const float SECONDS_PER_MINUTE = 60.0f;
 
 
@@ -28,19 +30,24 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
     public virtual void PullTrigger()
     {
-        if (_currentMagazineSize <= 0)
+        if (!_isShooting)
         {
-            ReloadWeapon();    
-        }
+            _isShooting = true;
+            if (_currentMagazineSize <= 0)
+            {
+                ReloadWeapon();    
+            }
 
-        StartCoroutine(Shoot());
+            StartCoroutine(Shoot());
+        }
     }
 
     protected virtual IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(_stats.FireRate / SECONDS_PER_MINUTE);
         Debug.Log("Pew Pew");
         _currentMagazineSize--;
+        yield return new WaitForSeconds(_stats.FireRate / SECONDS_PER_MINUTE);
+        _isShooting = false;
     }
 
     /// <summary>
