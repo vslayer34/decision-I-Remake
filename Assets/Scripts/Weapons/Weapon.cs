@@ -53,7 +53,6 @@ public abstract class Weapon : MonoBehaviour
     protected virtual IEnumerator Shoot()
     {
         _currentMagazineSize--;
-        Debug.Log($"Current magazine size: {_currentMagazineSize}");
         yield return new WaitForSeconds(SECONDS_PER_MINUTE / _stats.FireRate);
         _isShooting = false;
     }
@@ -63,10 +62,8 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
     public IEnumerator ReloadWeapon()
     {
-        Debug.Log("Reloading");
         yield return new WaitForSeconds(_stats.ReloadTime);
         _currentMagazineSize = _stats.MagazineSize;
-        Debug.Log("Reloaded");
         _isReloading = false;
     }
 
