@@ -46,7 +46,7 @@ public abstract class Weapon : MonoBehaviour
     {
         Debug.Log("Pew Pew");
         _currentMagazineSize--;
-        yield return new WaitForSeconds(_stats.FireRate / SECONDS_PER_MINUTE);
+        yield return new WaitForSeconds(SECONDS_PER_MINUTE / _stats.FireRate);
         _isShooting = false;
     }
 

@@ -9,9 +9,23 @@ public class Bullet : MonoBehaviour
 
 
 
+    // Game Loop Methods---------------------------------------------------------------------------
     private void OnEnable()
     {
         ShootBullet();
+    }
+
+    private void OnDisable()
+    {
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other != null && other.gameObject.TryGetComponent(out MeleZombie zombie))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Member Methods------------------------------------------------------------------------------
