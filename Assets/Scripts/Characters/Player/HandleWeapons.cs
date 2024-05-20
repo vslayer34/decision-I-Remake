@@ -111,6 +111,8 @@ public class HandleWeapons : MonoBehaviour
             _characterPivot.rotation = Quaternion.Lerp(currentRotation, targetRotation, currentTime / rotationTime);
             yield return null;
         }
+
+        _characterPivot.rotation = targetRotation;
     }
 
     /// <summary>

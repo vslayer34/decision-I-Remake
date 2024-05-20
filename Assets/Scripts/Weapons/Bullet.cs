@@ -30,7 +30,10 @@ public class Bullet : MonoBehaviour
 
     // Member Methods------------------------------------------------------------------------------
 
-    private void ShootBullet(float accuracy = 100.0f)
+    /// <summary>
+    /// Launch the bullet at the front vector
+    /// </summary>
+    private void ShootBullet()
     {
         _rigidBody.AddForce(transform.forward * 10.0f, ForceMode.Impulse);
     }

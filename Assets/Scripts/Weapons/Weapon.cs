@@ -42,6 +42,10 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Shoot the weapon according to its fire rate and reduce its magazine size
+    /// </summary>
     protected virtual IEnumerator Shoot()
     {
         _currentMagazineSize--;
@@ -59,12 +63,20 @@ public abstract class Weapon : MonoBehaviour
         Debug.Log("Reloaded");
     }
 
+
+    /// <summary>
+    /// Set the weapon as active and set its properties
+    /// </summary>
     public void ActivateWeapon()
     {
         _currentMagazineSize = _stats.MagazineSize;
     }
 
 
+    /// <summary>
+    /// Rotate the Bullet spawn point a bit to apply accuracys of the gun
+    /// </summary>
+    /// <param name="accuracy">The accuracy of the gun in the stats</param>
     protected void ApplyAccuracyValues(float accuracy)
     {
         Debug.Log("Applu accuracy");
@@ -76,6 +88,11 @@ public abstract class Weapon : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Get random rotation for the x, y axises according to the accuracy and deviation values
+    /// </summary>
+    /// <param name="accuracy">The accuracy of the used weapon</param>
+    /// <returns></returns>
     private float GetAxisAccuracy(float accuracy)
     {
         const float DEVIATION = 10.0f;

@@ -19,6 +19,10 @@ public class HandGun : Weapon
         base.PullTrigger();
     }
 
+
+    /// <summary>
+    /// Shoot the pistol and apply the accuracies
+    /// </summary>
     protected override IEnumerator Shoot()
     {
         ApplyAccuracyValues(_stats.Accuracy);
