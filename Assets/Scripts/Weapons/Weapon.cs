@@ -30,7 +30,7 @@ public abstract class Weapon : MonoBehaviour
     /// <summary>
     /// Shoot the weapon and play its sound
     /// </summary>
-    public virtual void PullTrigger()
+    public virtual void UseWeapon()
     {
         if (!_isShooting && !_isReloading)
         {

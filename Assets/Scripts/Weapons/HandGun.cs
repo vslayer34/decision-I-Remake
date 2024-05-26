@@ -14,9 +14,9 @@ public class HandGun : Weapon
 
 
 
-    public override void PullTrigger()
+    public override void UseWeapon()
     {
-        base.PullTrigger();
+        base.UseWeapon();
     }
 
 

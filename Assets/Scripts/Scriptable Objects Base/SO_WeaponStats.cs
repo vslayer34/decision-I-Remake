@@ -5,6 +5,7 @@ public class SO_WeaponStats : ScriptableObject
 {
     public enum Type
     {
+        MELE,
         HAND_GUN,
         SHOTGUN,
         AUTO_RIFLE,
