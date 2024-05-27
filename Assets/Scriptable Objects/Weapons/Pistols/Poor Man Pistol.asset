@@ -15,6 +15,8 @@ MonoBehaviour:
   <Name>k__BackingField: Poor Man Pistol
   <WeaponIcon>k__BackingField: {fileID: 21300000, guid: 31ef4f58cb94a8fb9a42f1d3e71b1055,
     type: 3}
+  <WeaponPrefab>k__BackingField: {fileID: 2648930820079255932, guid: 2f18a79b4ee9db6689de7b648c071e70,
+    type: 3}
   <WeaponClass>k__BackingField: 0
   <Range>k__BackingField: 6.5
   <ReloadTime>k__BackingField: 3

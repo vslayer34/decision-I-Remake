@@ -15,6 +15,8 @@ MonoBehaviour:
   <Name>k__BackingField: Poor Man Dagger
   <WeaponIcon>k__BackingField: {fileID: 21300000, guid: ba9d7277a59bd0a9e98f7fe5fb835260,
     type: 3}
+  <WeaponPrefab>k__BackingField: {fileID: 4465544978866596607, guid: 076f7de5b9d211a07a9f258f09846cb7,
+    type: 3}
   <WeaponClass>k__BackingField: 0
   <Range>k__BackingField: 0
   <ReloadTime>k__BackingField: 0
