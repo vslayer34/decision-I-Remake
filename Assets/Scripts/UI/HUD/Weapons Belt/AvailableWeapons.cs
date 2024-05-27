@@ -43,6 +43,12 @@ public class AvailableWeapons : MonoBehaviour
             {
                 weaponCard.CardWeaponImageSprite = _inventory.AvailableWeapons[i].WeaponIcon;
                 weaponCard.SelectionToggle.group = _toggleGroup;
+
+                if (i == 0)
+                {
+                    weaponCard.SelectionToggle.isOn = true;
+                    weaponCard.SelectionToggle.Select();
+                }
             }
             else
             {
