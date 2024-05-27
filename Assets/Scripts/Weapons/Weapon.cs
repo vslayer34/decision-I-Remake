@@ -20,12 +20,15 @@ public abstract class Weapon : MonoBehaviour
     private const float SECONDS_PER_MINUTE = 60.0f;
 
 
+
+    // Game Loop Methods---------------------------------------------------------------------------
     protected virtual void Start()
     {
         
     }
 
 
+    // Memeber Methods-----------------------------------------------------------------------------
 
     /// <summary>
     /// Shoot the weapon and play its sound
@@ -103,4 +106,8 @@ public abstract class Weapon : MonoBehaviour
 
         return DEVIATION - Random.Range(accuracy, MAX_ACCURACY);
     }
+
+    // Getters and Setters-------------------------------------------------------------------------
+
+    public SO_WeaponStats WeaponStats { get => _stats; }
 }

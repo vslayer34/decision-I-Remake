@@ -832,6 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b9d9e05c940a46db6943dfd3f35259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
   _weaponCard: {fileID: 6189759900783974507, guid: 02c5d31256067b6e9a64fa4adeeec285,
     type: 3}
 --- !u!1001 &1736710421

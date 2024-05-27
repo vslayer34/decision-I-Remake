@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AvailableWeapons : MonoBehaviour
 {
+    [SerializeField, Header("Inventory reference"), Tooltip("Reference to the inventory SO")]
+    private SO_Inventory _inventory;
+
+
     [SerializeField, Tooltip("Reference to the Weapon card")]
     private Transform _weaponCard;
 
@@ -25,9 +29,16 @@ public class AvailableWeapons : MonoBehaviour
     /// </summary>
     private void PopulateWeaponBelt()
     {
+        WeaponCard weaponCard;
+
         for (int i = 0; i < BELT_SIZE; i++)
         {
-            Instantiate(_weaponCard, transform);
+            weaponCard = Instantiate(_weaponCard, transform).GetComponent<WeaponCard>();
+            
+            if (_inventory.AvailableWeapons[i] != null)
+            {
+                weaponCard.CardWeaponImageSprite = _inventory.AvailableWeapons[i].WeaponIcon;
+            }
         }
     }
 }

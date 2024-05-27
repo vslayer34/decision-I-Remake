@@ -17,6 +17,10 @@ public class SO_WeaponStats : ScriptableObject
     [field: SerializeField, Tooltip("The name of the weapon")]
     public String Name { get; private set; }
 
+    [field: SerializeField, Tooltip("The weapon sprite")]
+    public Sprite WeaponIcon { get; private set; }
+    
+
     [field: SerializeField, Tooltip("The class of the weapon")]
     /// <summary>
     /// The class of the weapon

@@ -7,7 +7,7 @@ using UnityEngine;
 public class SO_Inventory : ScriptableObject
 {
     [field: SerializeField, Tooltip("Reference to all available weapons the player havve")]
-    public List<Weapon> AvailableWeapons { get; private set; } = new List<Weapon>(5);
+    public List<SO_WeaponStats> AvailableWeapons { get; private set; } = new List<SO_WeaponStats>(5);
 
 
     [field: SerializeField, Tooltip("Reference to the currently active weapon")]

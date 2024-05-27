@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Poor Man Sword
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Poor Man Dagger
+  <WeaponIcon>k__BackingField: {fileID: 21300000, guid: ba9d7277a59bd0a9e98f7fe5fb835260,
+    type: 3}
   <WeaponClass>k__BackingField: 0
   <Range>k__BackingField: 0
   <ReloadTime>k__BackingField: 0

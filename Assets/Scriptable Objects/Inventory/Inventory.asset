@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   <AvailableWeapons>k__BackingField:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 5d4cf6faddcb610ca9eace6e4c39e0df, type: 2}
+  - {fileID: 11400000, guid: a39a08d4c7427c4bf90361b3cdd217db, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
