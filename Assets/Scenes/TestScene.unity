@@ -835,25 +835,6 @@ MonoBehaviour:
   _inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
   _weaponCard: {fileID: 6189759900783974507, guid: 02c5d31256067b6e9a64fa4adeeec285,
     type: 3}
---- !u!1 &1701824964 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7278108145274139788, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 5747545496129872167}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1701824965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701824964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e6680f42e8c0a912aad05a8dbbfad0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
 --- !u!1001 &1736710421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1725,29 +1706,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2619660123971437146, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8110116772548248614, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8963031551745797220, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7278108145274139788, guid: b7fdb31b628aa18d4971e74bbfcc89ea,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1701824965}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7fdb31b628aa18d4971e74bbfcc89ea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
