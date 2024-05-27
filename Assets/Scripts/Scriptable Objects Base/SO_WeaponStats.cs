@@ -17,13 +17,16 @@ public class SO_WeaponStats : ScriptableObject
     [field: SerializeField, Header("Weapon Required Info"), Tooltip("The name of the weapon")]
     public String Name { get; private set; }
 
+    
     [field: SerializeField, Tooltip("The weapon sprite")]
     public Sprite WeaponIcon { get; private set; }
 
+    
     [field: SerializeField, Tooltip("Reference to the weapon prefab")]
     public Transform WeaponPrefab { get; private set; }
 
 
+    
     [field: SerializeField, Space(20), Tooltip("The class of the weapon")]
     /// <summary>
     /// The class of the weapon

@@ -565,6 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3354264221569549908}
+  - component: {fileID: 2158828340858437950}
   m_Layer: 0
   m_Name: Weapon Point
   m_TagString: Untagged
@@ -589,6 +590,19 @@ Transform:
   - {fileID: 2458598031667555859}
   m_Father: {fileID: 2458871072561223751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2158828340858437950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7278108145274139788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e6680f42e8c0a912aad05a8dbbfad0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
 --- !u!1 &7739516747605441674
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +839,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PoorMan Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 2764483053558739902, guid: 2f18a79b4ee9db6689de7b648c071e70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -898,6 +917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Poor Man Dagger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7171253605577959560, guid: 076f7de5b9d211a07a9f258f09846cb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
