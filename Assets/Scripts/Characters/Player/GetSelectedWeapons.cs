@@ -19,6 +19,13 @@ public class GetSelectedWeapons : MonoBehaviour
     {
         GetPlayerChosenWeapons();
         SetActiveWeapon();
+
+        WeaponCard.OnCardSelected += SetActiveWeapon;
+    }
+
+    private void OnDisable()
+    {
+        WeaponCard.OnCardSelected -= SetActiveWeapon;
     }
 
     // Member Methods------------------------------------------------------------------------------
@@ -42,7 +49,7 @@ public class GetSelectedWeapons : MonoBehaviour
     }
 
 
-    private void SetActiveWeapon(int index = 0)
+    public void SetActiveWeapon(int index = 0)
     {
         // _runSelectedWeapons[index].ActivateWeapon();
         _inventory.ChangeActiveWeapon(_runSelectedWeapons[index]);
