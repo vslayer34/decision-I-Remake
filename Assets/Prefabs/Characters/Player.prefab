@@ -591,11 +591,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcde36652e33dde238a0390be2d23c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
+  _inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
   <WeaponHoldPoint>k__BackingField: {fileID: 3354264221569549908}
   _spriteRenderer: {fileID: 6776973579319450607}
   _characterPivot: {fileID: 2458871072561223751}
-  _testRadius: 6.5
+  _detectionRadius: 5
   _zombieLayerMask:
     serializedVersion: 2
     m_Bits: 8

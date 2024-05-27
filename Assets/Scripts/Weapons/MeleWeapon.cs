@@ -16,8 +16,6 @@ public class MeleWeapon : Weapon
 
     public override void UseWeapon()
     {
-        Debug.Log("Called from MeleWeapons.cs");
-
         int numberOfCollisions;
         numberOfCollisions = Physics.SphereCastNonAlloc(transform.position, 0.5f, transform.forward, 
             _hits, 1.0f, (int)_enemyPhysicsLayer);

@@ -6,7 +6,7 @@ using UnityEngine;
 public class HandleWeapons : MonoBehaviour
 {
     [SerializeField, Header("Required SOs"), Tooltip("Reference to the inventory SO")]
-    private SO_Inventory _Inventory;
+    private SO_Inventory _inventory;
 
 
     [field: SerializeField, Tooltip("Weapon holding area")]
@@ -26,7 +26,7 @@ public class HandleWeapons : MonoBehaviour
     private Collider[] _hits = new Collider[20];
 
     [SerializeField, Tooltip("test radius")]
-    private float _testRadius = 5.0f;
+    private float _detectionRadius = 5.0f;
 
     [SerializeField, Tooltip("the layer mask for the zombies")]
     private LayerMask _zombieLayerMask;
@@ -36,7 +36,7 @@ public class HandleWeapons : MonoBehaviour
     /// the fixed radius that cover a one scale range sprite
     /// helps with calculating changing of the sprite size in relation to the range radius
     /// </summary>
-    private const float _oneScaleRadiusCoverage = 6.5f;
+    private const float ONE_SCALE_RADIUS_COVERAGE = 6.5f;
 
 
 
@@ -44,7 +44,7 @@ public class HandleWeapons : MonoBehaviour
 
     private void OnEnable()
     {
-        _Inventory.OnActiveWeaponChanged += GetActiveWeapon;
+        _inventory.OnActiveWeaponChanged += GetActiveWeapon;
     }
 
     private void Start()
@@ -60,21 +60,21 @@ public class HandleWeapons : MonoBehaviour
 
     private void OnDisable()
     {
-        _Inventory.OnActiveWeaponChanged -= GetActiveWeapon;
+        _inventory.OnActiveWeaponChanged -= GetActiveWeapon;
     }
     
     // Member Methods------------------------------------------------------------------------------
 
     private void DisplayRange()
     {
-        _spriteRenderer.transform.localScale = Vector3.one * (_testRadius / _oneScaleRadiusCoverage); 
+        _spriteRenderer.transform.localScale = Vector3.one * (_detectionRadius / ONE_SCALE_RADIUS_COVERAGE); 
     }
 
     private void DetectEnemies()
     {
         float nearestEnemy = float.MaxValue;
 
-        int collisionCount = Physics.OverlapSphereNonAlloc(transform.position, _testRadius, _hits, (int)_zombieLayerMask);
+        int collisionCount = Physics.OverlapSphereNonAlloc(transform.position, _detectionRadius, _hits, (int)_zombieLayerMask);
 
         if (collisionCount == 0)
         {
@@ -102,7 +102,7 @@ public class HandleWeapons : MonoBehaviour
             // Quaternion.LookRotation
             // StartCoroutine(ResetCharacterPivot(Quaternion.LookRotation(_followTarget.transform.position, Vector3.up)));
             _heldWeapon.UseWeapon();
-            break;
+            // break;
         }
     }
 
@@ -136,7 +136,8 @@ public class HandleWeapons : MonoBehaviour
     private void GetActiveWeapon()
     {
         // _heldWeapon = WeaponHoldPoint.GetComponentInChildren<Weapon>();
-        _heldWeapon = _Inventory.ActiveWeapon;
+        _heldWeapon = _inventory.ActiveWeapon;
+        _detectionRadius = _heldWeapon.WeaponStats.Range;
         Debug.Log(_heldWeapon);
         _heldWeapon.ActivateWeapon();
     }
