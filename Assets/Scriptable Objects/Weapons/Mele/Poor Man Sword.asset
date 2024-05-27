@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd76c0d1e8df9fac882da9beb8caf15, type: 3}
   m_Name: Poor Man Sword
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: Poor Man Dagger
   <WeaponClass>k__BackingField: 0
   <Range>k__BackingField: 0
   <ReloadTime>k__BackingField: 0

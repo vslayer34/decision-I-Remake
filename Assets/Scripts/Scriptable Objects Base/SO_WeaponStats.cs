@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -12,6 +13,9 @@ public class SO_WeaponStats : ScriptableObject
         RIFLE,
         LAUNCHER
     }
+
+    [field: SerializeField, Tooltip("The name of the weapon")]
+    public String Name { get; private set; }
 
     [field: SerializeField, Tooltip("The class of the weapon")]
     /// <summary>

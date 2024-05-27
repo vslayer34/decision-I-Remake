@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663aa707528254525bbf75f5600abedd, type: 3}
   m_Name: Poor Man Pistol
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: Poor Man Pistol
   <WeaponClass>k__BackingField: 0
   <Range>k__BackingField: 6.5
   <ReloadTime>k__BackingField: 3
