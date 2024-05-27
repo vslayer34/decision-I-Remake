@@ -225,6 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4465544978866596607}
+  - component: {fileID: 4057310355787765482}
   m_Layer: 0
   m_Name: Poor Man Dagger
   m_TagString: Untagged
@@ -250,6 +251,23 @@ Transform:
   - {fileID: 7283661889223606979}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4057310355787765482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7171253605577959560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23edb4c4f604fc567a90fd1e64929526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 11400000, guid: a39a08d4c7427c4bf90361b3cdd217db, type: 2}
+  <BulletSpawnPosition>k__BackingField: {fileID: 0}
+  _enemyPhysicsLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &8780780969982856350
 GameObject:
   m_ObjectHideFlags: 0
