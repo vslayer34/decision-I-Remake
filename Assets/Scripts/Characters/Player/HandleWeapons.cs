@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class HandleWeapons : MonoBehaviour
 {
+    [SerializeField, Header("Required SOs"), Tooltip("Reference to the inventory SO")]
+    private SO_Inventory _Inventory;
+
+
     [field: SerializeField, Tooltip("Weapon holding area")]
     public Transform WeaponHoldPoint { get; private set; }
 
@@ -38,6 +42,11 @@ public class HandleWeapons : MonoBehaviour
 
     // Game Loop Methods---------------------------------------------------------------------------
 
+    private void OnEnable()
+    {
+        _Inventory.OnActiveWeaponChanged += GetActiveWeapon;
+    }
+
     private void Start()
     {
         GetActiveWeapon();
@@ -47,6 +56,11 @@ public class HandleWeapons : MonoBehaviour
     {
         DisplayRange();
         DetectEnemies();
+    }
+
+    private void OnDisable()
+    {
+        _Inventory.OnActiveWeaponChanged -= GetActiveWeapon;
     }
     
     // Member Methods------------------------------------------------------------------------------
@@ -121,7 +135,9 @@ public class HandleWeapons : MonoBehaviour
     /// <typeparam name="Weapon"></typeparam>
     private void GetActiveWeapon()
     {
-        _heldWeapon = WeaponHoldPoint.GetComponentInChildren<Weapon>();
+        // _heldWeapon = WeaponHoldPoint.GetComponentInChildren<Weapon>();
+        _heldWeapon = _Inventory.ActiveWeapon;
+        Debug.Log(_heldWeapon);
         _heldWeapon.ActivateWeapon();
     }
 }

@@ -9,6 +9,8 @@ public class GetSelectedWeapons : MonoBehaviour
 
     private List<Weapon> _runSelectedWeapons = new List<Weapon>();
 
+    private Weapon _currentActiveWeapon;
+
 
 
     // Game Loop Methods---------------------------------------------------------------------------
@@ -16,6 +18,7 @@ public class GetSelectedWeapons : MonoBehaviour
     private void Awake()
     {
         GetPlayerChosenWeapons();
+        SetActiveWeapon();
     }
 
     // Member Methods------------------------------------------------------------------------------
@@ -33,21 +36,23 @@ public class GetSelectedWeapons : MonoBehaviour
             {
                 spawnedWeapon = Instantiate(_inventory.AvailableWeapons[i].WeaponPrefab, transform).GetComponent<Weapon>();
                 _runSelectedWeapons.Add(spawnedWeapon);
+                spawnedWeapon.gameObject.SetActive(false);
             }
         }
     }
 
 
-    // private void SetActiveWeapon(int index = 0)
-    // {
-    //     for (int i = 0; i < _runSelectedWeapons.Count; i++)
-    //     {
-    //         if (_runSelectedWeapons[i])
-    //         {
-    //             _runSelectedWeapons[i].gameObject.SetActive(true);
-    //         }
-    //     }
-    // }
+    private void SetActiveWeapon(int index = 0)
+    {
+        // _runSelectedWeapons[index].ActivateWeapon();
+        _inventory.ChangeActiveWeapon(_runSelectedWeapons[index]);
+
+        // disable the previouse selected weapon before setting the new one
+        _currentActiveWeapon?.gameObject.SetActive(false);
+        _currentActiveWeapon = _inventory.ActiveWeapon;
+        _currentActiveWeapon.gameObject.SetActive(true);
+    }
+    
     // Getters and Setters-------------------------------------------------------------------------
 
     public List<Weapon> SelectedWeapons { get => _runSelectedWeapons; }

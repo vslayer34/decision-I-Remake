@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new inventory", menuName = "Game Globals/Inventory")]
 public class SO_Inventory : ScriptableObject
 {
+    public event Action OnActiveWeaponChanged;
+
     [field: SerializeField, Tooltip("Reference to all available weapons the player havve")]
     public List<SO_WeaponStats> AvailableWeapons { get; private set; } = new List<SO_WeaponStats>(5);
 
@@ -23,5 +26,6 @@ public class SO_Inventory : ScriptableObject
     public void ChangeActiveWeapon(Weapon newlySelectedWeapon)
     {
         ActiveWeapon = newlySelectedWeapon;
+        OnActiveWeaponChanged?.Invoke();
     }
 }

@@ -29,7 +29,7 @@ public class AvailableWeapons : MonoBehaviour
     // Member Methods------------------------------------------------------------------------------
 
     /// <summary>
-    /// Create the weapon cards when the game starts
+    /// Create the weapon cards when the game starts and disable unavialbe cards
     /// </summary>
     private void PopulateWeaponBelt()
     {
@@ -43,6 +43,10 @@ public class AvailableWeapons : MonoBehaviour
             {
                 weaponCard.CardWeaponImageSprite = _inventory.AvailableWeapons[i].WeaponIcon;
                 weaponCard.SelectionToggle.group = _toggleGroup;
+            }
+            else
+            {
+                weaponCard.SelectionToggle.interactable = false;
             }
         }
     }
