@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 1621931693}
   - component: {fileID: 1621931694}
   - component: {fileID: 1621931695}
+  - component: {fileID: 1621931696}
   m_Layer: 5
   m_Name: Available Weapons
   m_TagString: Untagged
@@ -833,8 +834,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 11400000, guid: b01a6df313065f9a6a39b9832e183e97, type: 2}
+  _toggleGroup: {fileID: 1621931696}
   _weaponCard: {fileID: 6189759900783974507, guid: 02c5d31256067b6e9a64fa4adeeec285,
     type: 3}
+--- !u!114 &1621931696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621931690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1001 &1736710421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1543,6 +1558,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon HUD Card
       objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796761907740578544, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.4313724
+      objectReference: {fileID: 0}
     - target: {fileID: 6189759900783974507, guid: 02c5d31256067b6e9a64fa4adeeec285,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1643,6 +1693,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8934469328925360178, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.49411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934469328925360178, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.03529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 8934469328925360178, guid: 02c5d31256067b6e9a64fa4adeeec285,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.49803922
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1725,10 +1790,10 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1783503261}
   - {fileID: 1796384807}
+  - {fileID: 728123798}
   - {fileID: 1214382565}
   - {fileID: 2096873211}
   - {fileID: 5747545496129872167}
-  - {fileID: 728123798}
   - {fileID: 1558873429664422374}
   - {fileID: 1545139702}
   - {fileID: 1736710421}

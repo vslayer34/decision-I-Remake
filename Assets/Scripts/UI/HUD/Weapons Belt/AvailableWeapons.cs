@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AvailableWeapons : MonoBehaviour
 {
     [SerializeField, Header("Inventory reference"), Tooltip("Reference to the inventory SO")]
     private SO_Inventory _inventory;
+
+    [SerializeField, Tooltip("Reference to the toggle group component")]
+    private ToggleGroup _toggleGroup;
 
 
     [SerializeField, Tooltip("Reference to the Weapon card")]
@@ -38,6 +42,7 @@ public class AvailableWeapons : MonoBehaviour
             if (_inventory.AvailableWeapons[i] != null)
             {
                 weaponCard.CardWeaponImageSprite = _inventory.AvailableWeapons[i].WeaponIcon;
+                weaponCard.SelectionToggle.group = _toggleGroup;
             }
         }
     }

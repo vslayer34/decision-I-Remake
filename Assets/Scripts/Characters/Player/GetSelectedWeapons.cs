@@ -21,7 +21,7 @@ public class GetSelectedWeapons : MonoBehaviour
     // Member Methods------------------------------------------------------------------------------
 
     /// <summary>
-    /// spawn the weapon that the player selected for this run
+    /// Spawn the weapon that the player selected for this run
     /// </summary>
     private void GetPlayerChosenWeapons()
     {
