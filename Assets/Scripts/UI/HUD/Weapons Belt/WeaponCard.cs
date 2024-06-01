@@ -14,6 +14,9 @@ public class WeaponCard : MonoBehaviour
     [SerializeField, Tooltip("Reference to the toggle button")]
     private Toggle _selectionToggle;
 
+    [SerializeField, Tooltip("Reference to the card outline")]
+    private Outline _cardOutline;
+
 
 
     // Game Loop Methods---------------------------------------------------------------------------
@@ -23,6 +26,7 @@ public class WeaponCard : MonoBehaviour
         _selectionToggle.onValueChanged.AddListener(delegate 
         {
             SelectCard();
+            CardOutline.enabled = true;
         });
     }
 
@@ -39,4 +43,5 @@ public class WeaponCard : MonoBehaviour
     public Toggle SelectionToggle { get => _selectionToggle; }
 
     public int CardIndex { get; set; }
+    public Outline CardOutline { get => _cardOutline; private set => _cardOutline = value; }
 }
