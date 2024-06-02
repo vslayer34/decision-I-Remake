@@ -12,6 +12,8 @@ public class MeleWeapon : Weapon
     private LayerMask _enemyPhysicsLayer;
     private RaycastHit[] _hits = new RaycastHit[5];
 
+    private ITakeDamage zombie;
+
 
 
     public override void UseWeapon()
@@ -22,7 +24,8 @@ public class MeleWeapon : Weapon
         
         for (int i = 0; i < numberOfCollisions; i++)
         {
-            Debug.Log(_hits[i].collider.name);
+            _hits[i].collider.TryGetComponent(out zombie);
+            zombie.TakeDamage();
         }
     }
 }

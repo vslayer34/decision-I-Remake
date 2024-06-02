@@ -138,7 +138,6 @@ public class HandleWeapons : MonoBehaviour
         // _heldWeapon = WeaponHoldPoint.GetComponentInChildren<Weapon>();
         _heldWeapon = _inventory.ActiveWeapon;
         _detectionRadius = _heldWeapon.WeaponStats.Range;
-        Debug.Log(_heldWeapon);
         _heldWeapon.ActivateWeapon();
     }
 }
