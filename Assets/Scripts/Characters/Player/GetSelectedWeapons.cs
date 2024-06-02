@@ -56,6 +56,7 @@ public class GetSelectedWeapons : MonoBehaviour
 
         // disable the previouse selected weapon before setting the new one
         _currentActiveWeapon?.gameObject.SetActive(false);
+        
         _currentActiveWeapon = _inventory.ActiveWeapon;
         _currentActiveWeapon.gameObject.SetActive(true);
     }

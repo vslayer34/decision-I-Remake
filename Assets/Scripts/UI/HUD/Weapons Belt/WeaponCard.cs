@@ -26,7 +26,16 @@ public class WeaponCard : MonoBehaviour
         _selectionToggle.onValueChanged.AddListener(delegate 
         {
             SelectCard();
-            CardOutline.enabled = true;
+
+            // Outline the selected card and disable all other cards
+            if (_selectionToggle.isOn)
+            {
+                CardOutline.enabled = true;
+            }
+            else
+            {
+                CardOutline.enabled = false;
+            }
         });
     }
 
