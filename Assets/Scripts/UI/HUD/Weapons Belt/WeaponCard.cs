@@ -41,6 +41,9 @@ public class WeaponCard : MonoBehaviour
 
     // Member Methods------------------------------------------------------------------------------
 
+    /// <summary>
+    /// Select the card and invoke the signal for the get selected weapon to change it
+    /// </summary>
     public void SelectCard()
     {
         OnCardSelected?.Invoke(CardIndex);

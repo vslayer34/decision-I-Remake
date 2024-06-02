@@ -49,6 +49,10 @@ public class GetSelectedWeapons : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Set the active weapon according to the index of the availabe weapon for the run
+    /// </summary>
+    /// <param name="index">Index of the selected weapon</param>
     public void SetActiveWeapon(int index = 0)
     {
         // _runSelectedWeapons[index].ActivateWeapon();
